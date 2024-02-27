@@ -23,10 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $insertar = "INSERT INTO vehiculos (tipoVehiculo, marca, color, placa, observaciones)
-    values  ('$tipoVehiculo','$marca', '$color', '$placa', '$observaciones' )";
+    VALUES  ('$tipoVehiculo','$marca', '$color', '$placa', '$observaciones' )";
 
     if ($conexion->query($insertar) === TRUE) {
-        echo "Registro insertado Correctamente";
+        header ("Location: exito.php");
+        exit;
     } else {
         echo "Error: " . $insertar . "<br>" . $conexion->error;
     }
