@@ -2,6 +2,7 @@
 $nombrePagina = "Nuevo Ingreso";
 include 'plantilla.php';
 include 'header.php';
+include 'conexionbasedatos.php';
 
 //verficar si se a enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,16 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $placa = $_POST["placa"];
     $observaciones = $_POST["observaciones"];
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $basedatos = "parking_plus_db";
-
-    $conexion = new mysqli($servername, $username, $password, $basedatos);
-
-    if ($conexion->connect_error) {
-        die("La conexion a la base de datos tuvo un error: " . $conexion->connect_error);
-    }
 
     $insertar = "INSERT INTO vehiculos (tipoVehiculo, marca, color, placa, observaciones)
     VALUES  ('$tipoVehiculo','$marca', '$color', '$placa', '$observaciones' )";

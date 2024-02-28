@@ -45,7 +45,7 @@
         padding: 15px;
         border-radius: 10px;
         border: 1px solid var(--grisOscuro);
-
+        
         &:focus {
             border: 1px solid var(--rojoPrincipal);
             outline: none;

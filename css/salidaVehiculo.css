@@ -32,6 +32,12 @@
 .informacion {
     display: grid;
     grid-template-columns: auto auto;
+    margin-top: 20px;
+}
+
+.informacion > div {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .izquierda {
@@ -47,8 +53,8 @@
     border: 1px solid #000;
     background-color: var(--amarillo);
     width: fit-content;
-    padding: .4rem;
-
+    padding: .1 rem;
+    margin-left: auto;
 }
 
 .botones-acciones{

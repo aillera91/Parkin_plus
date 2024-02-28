@@ -2,19 +2,7 @@
 $nombrePagina = "Parqueados";
 include "plantilla.php";
 include "header.php";
-
-
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$basedatos = "parking_plus_db";
-
-$conexion = new mysqli($servername, $username, $password, $basedatos);
-
-if ($conexion->connect_error) {
-    die("La conexion a la base de datos tuvo un error: " . $conexion->connect_error);
-}
+include "conexionbasedatos.php";
 
 //consultar los vehiculos parqueados
 $vehiculosParqueados = "SELECT * FROM vehiculos WHERE estado = 'parqueado'";
@@ -44,15 +32,13 @@ $vehiculos = $resultado->fetch_all(MYSQLI_ASSOC);
                 echo "<td>";
                 if ($vehiculo["tipoVehiculo"] == "carro") {
                     echo '<i class="fa-solid fa-car"></i>';
-                }
-                elseif ($vehiculo["tipoVehiculo"] == "moto"){
+                } elseif ($vehiculo["tipoVehiculo"] == "moto") {
                     echo '<i class="fa-solid fa-motorcycle"></i>';
-                }
-                else {
+                } else {
                     echo '<i class="fa-solid fa-circle-dot"></i>';
                 }
-                
-                echo  $vehiculo["placa"] . "</td>";
+
+                echo $vehiculo["placa"] . "</td>";
                 echo "<td>" . $vehiculo["fechaHoraIngreso"] . "</td>";
                 echo "</tr>";
             }
