@@ -33,9 +33,12 @@ include 'header.php';
         <H3>Parqueados</H3>
     </div>
     <div class="boton">
-        <div class="boton-menu">
-            <i class="fa-solid fa-chart-line"></i>
-        </div>
+        <a href="reportediario.php">
+            <div class="boton-menu">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+        </a>
         <H3>Reporte Diario</H3>
     </div>
 </div>
